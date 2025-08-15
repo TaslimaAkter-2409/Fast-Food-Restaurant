@@ -1,0 +1,773 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+ 
+}
+/*navbar section*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #0f0f0f, #2c2c2c);
+  padding: 15px 60px;
+}
+
+.logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #ffffffcc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a.active {
+  color: orange;
+}
+
+.nav-links li a:hover {
+  color: orange;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icons i {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-icons i:hover {
+  color: orange;
+}
+
+.order-btn {
+  background-color: #fcb000;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #e8a300;
+}
+
+
+
+
+/* Base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ 
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+#Food-section .container {
+  padding: 30px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* flex দিয়ে দুই কার্ড বাম-ডানে বসানো */
+.food-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; /* কার্ডগুলোর মধ্যে ফাঁকা */
+}
+
+/* food div কে আর grid না দিয়ে flex করব, কার্ড দুটো এক লাইনে */
+.food-area .food {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* কার্ডের স্টাইল */
+.food-area .food .food-card {
+  flex: 1;
+  display: flex; /* ছবি এবং টেক্সট এক লাইনে */
+   background-color: rgb(34, 40, 49);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px; /* গোলাকার কোণা */
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* ছবি অংশ */
+.food-area .food .food-card .food-image {
+  flex: 0 0 40%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* ইচ্ছামত দিতে পারেন */
+}
+
+.food-area .food .food-card .food-image img {
+  width: 120px;      /* circle image এর ডায়ামিটার */
+  height: 120px;     /* width এর সমান height দিতে হবে */
+  border-radius: 50%; /* এখানে ছবিটাকে গোলাকৃতির করে দিচ্ছে */
+  object-fit: cover;  /* ছবি crop না হয়ে সুন্দর ফিট হবে */
+  display: block;
+}
+
+
+.food-area .food .food-card .food-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ছবির আকার সুন্দর রাখা */
+  display: block;
+}
+
+/* ডিটেইলস বা টেক্সট অংশ */
+.food-area .food .food-card .food-con {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;       /* টেক্সট একটার নিচে একটা */
+  justify-content: center;      /* vertical center */
+  align-items: flex-start;      /* বাম দিকে টেক্সট এলাইন করা */
+  gap: 10px;                    /* উপাদানগুলোর মধ্যে ফাঁকা */
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.food-con h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+}
+
+.food-con h2 {
+  font-size: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  color:#fff;
+  margin: 0;
+}
+
+.food-con p {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+.food-area .food .food-card .food-con .btn1{
+    background-color: #fcb000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+#form {
+  padding: 60px 100px;
+  background: #fff;
+}
+
+/* --- Main Container --- */
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.form-section,
+.map-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* --- Form Section Styling --- */
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+  color: #2c2c2c;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+/* Custom styling for select dropdown arrow */
+.select-wrapper {
+  position: relative;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 2.5rem;
+}
+
+.select-wrapper::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+}
+
+/* Style for date input icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.btn-book {
+  background-color: #f7b731;
+  color: #333;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-book:hover {
+  background-color: #e6a82a;
+}
+
+/* --- Map Section Styling --- */
+.map-section {
+  display: flex;
+  justify-content: center; /* center the map box horizontally */
+  padding-top: 100px;
+}
+
+.map-placeholder {
+  
+  width: 100%;
+  max-width: 550px;
+  height: 400px;
+  min-height: 350px;
+
+  background-color: #5A8361;
+  background-image: url('https://i.imgur.com/3d6vHw3.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 200px; /* Smaller image */
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* --- Map Error Popup Styling --- */
+.map-error-popup {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 350px;
+  font-size: 0.9rem;
+}
+
+.popup-title {
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+.popup-content {
+  padding: 1.5rem 1rem;
+}
+
+.popup-content a {
+  color: #4285F4;
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+}
+
+.btn-ok {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .map-placeholder {
+    height: 300px;
+    background-size: 150px;
+     margin-bottom: 50px; 
+  }
+
+  #form {
+    padding: 40px 20px;
+  }
+}
+
+
+
+
+
+
+#review-section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  margin-bottom: 70px;
+}
+
+/* Wrapper for overflow */
+.review-area-wrapper {
+  overflow-x: hidden;   /* ডান-বাম স্লাইডিংয়ের সময় বাকি কার্ডগুলো লুকাবে */
+  overflow-y: visible;  /* উপরের ইমেজ দৃশ্যমান থাকবে */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main sliding container */
+.review-area {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.5s ease;
+}
+
+/* Each Review */
+.review-box-wrapper {
+  flex: 0 0 350px; /* fix width */
+  position: relative;
+  overflow: visible; /* উপরের ছবি লুকবে না */
+}
+
+/* Image */
+.review-img {
+  position: relative; /* absolute থেকে relative করলে পুরো ছবি review-box এর ভিতরে থাকে */
+  top: 0;             /* উপরে স্থান না নেবে */
+  margin: 0 auto -60px; /* review-box এর সাথে ঠিকভাবে position করতে */
+  width: 120px;  
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #ffbe33;
+  background: white;
+  z-index: 2;
+}
+
+.review-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* পুরো ইমেজ দেখাবে */
+  border-radius: 50%;
+}
+
+/* Review Content Box */
+.review-box {
+  background-color: #1c1f26;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 70px; /* উপরে ছবির জন্য space */
+  box-sizing: border-box;
+  min-height: 220px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.review-box:hover {
+  transform: translateY(-5px);
+}
+
+.review-box h4 {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.review-box span {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Navigation Buttons */
+.review-buttons {
+  margin-top: 40px;
+}
+
+.review-buttons button {
+  background-color: #ffbe33;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  margin: 0 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
+#f-section {
+  background-color: #222831;
+  padding: 80px 40px;
+}
+
+#f-section .footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+#f-section .footer .c1,
+#f-section .footer .f-feane,
+#f-section .footer .open-foot {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 10px;
+}
+
+#f-section .footer p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+#f-section .f-icon {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#f-section .f-icon .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #393e46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+#f-section .f-icon .icon:hover {
+  background-color: #00adb5;
+}
+
+#f-section .f-icon .icon i {
+  font-size: 20px;
+  color: #fff;
+}
+
+#f-section .details {
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 40px;
+  line-height: 1.6;
+  
+  padding-top: 10px;
+}
+
+
+/* Cart Section */
+#cart-section {
+  padding: 60px 100px;
+  background-color: #fff;
+}
+
+.cart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.cart-area > h2 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  padding-bottom: 80px;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+/* Cart Item as a Link */
+.c-cart {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none; /* remove underline */
+  color: inherit;         /* keep text color */
+  border-radius: 10px;
+  overflow: hidden;       /* so background color doesn't leak */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.3s;
+}
+
+.c-cart:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 12px;
+}
+
+/* Image Container */
+.c-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.c-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Details section covers entire lower area */
+.c-details {
+  background-color: rgb(34, 40, 49);
+  color: #fff;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.c-details h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.c-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-price i {
+  color: orange;
+}
+
+
+#about .about-area{
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+
+}
+#about{
+  background-color:#1c1f26;
+}
+
+#about .about-area .image{
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+
+#about .about-area .image img{
+  width: 500px;
+  height: 500px;
+}
+
+#about .about-area .details {
+padding-left: 50px;
+padding-bottom: 180px;
+padding-top: 220px;
+padding-right: 100px;
+}
+#about .about-area .details h2{
+  font-family: 'Dancing Script', cursive;
+  padding-bottom: 2%;
+  font-weight: 700;
+  font-size: 35px;
+}
+.btn {
+  background-color: #fcb000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+
+}
+#about .about-area .details p{
+  padding-bottom: 2%;
+}
+
+
+#hero-section {
+  background-image:
+    linear-gradient(to right, #0f0f0f, #2c2c2c),
+    url('./images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+
+
+
+.hero-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 60px;
+  flex-wrap: wrap;
+}
+
+.hero-area .carousel-content .slide.active h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+
+
+.hero-area .btn {
+  background-color: #fcb000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+#hero-section {
+    font-family: Arial, sans-serif;
+  }
+  .carousel-content {
+    position: relative;
+    max-width: 600px;
+    margin: 0;
+    padding: 60px 40px;
+    text-align: left;  /* align text left */
+  }
+  .slide {
+    display: none;
+    animation: fadeIn 1s ease forwards;
+  }
+  .slide.active {
+    display: block;
+  }
+  .btn {
+    background-color: #ff4500;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  .btn:hover {
+    background-color: #e03e00;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }  
